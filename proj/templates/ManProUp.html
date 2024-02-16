@@ -1,0 +1,60 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'css/update.css' %}">
+</head>
+
+<body>
+    {% for x in emp %}
+    <form action="managerup" method="post">
+        {% csrf_token %}
+        <input type="hidden" value="{{x.id}}" name="id">
+        <table>
+            <tr>
+                <td>NAME:-</td>
+                <td><input type="text" value="{{x.name}}" name="name"></td>
+            </tr>
+            <tr>
+                <td>Mother's name:-</td>
+                <td><input type="text" value="{{x.Mname}}" name="Mname"></td>
+            </tr>
+            <tr>
+                <td>Contact no:-</td>
+                <td><input type="text" value="{{x.mobile}}" name="mobile"></td>
+            </tr>
+            <tr>
+                <td>City:-</td>
+                <td><input type="text" value="{{x.city}}" name="city"></td>
+            </tr>
+            <tr>
+                <td>State:-</td>
+                <td><input type="text" value="{{x.state}}" name="state"></td>
+            </tr>
+            <tr>
+                <td>Pincode:-</td>
+                <td><input type="text" value="{{x.pincode}}" name="pincode"></td>
+            </tr>
+            <tr>
+                <td>Email:-</td>
+                <td><input type="text" value="{{x.email}}" name="email"></td>
+            </tr>
+            <tr>
+                <td>Password:-</td>
+                <td><input type="text" value="{{x.password}}" name="password"></td>
+            </tr>
+            <tr>
+                <td>{{msg}}</td>
+                <td><input type="submit" value="UPDATE"></td>
+            </tr>
+        </table>
+    </form>
+    <a href="pro?id={{x.id}}">Back</a> {% endfor %}
+</body>
+
+</html>

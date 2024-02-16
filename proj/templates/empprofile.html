@@ -1,0 +1,66 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="widtd=device-widtd, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'css/profilecss.css' %}">
+</head>
+
+<body>
+    {% for x in emprec %}
+    <div id="mySidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <a href="empup?id={{x.id}}">Update my details</a>
+        <a href="defdata">Update Footer section</a>
+        <a href="homedata">Update Home section</a>
+        <a href="aboutdata">Update About section</a>
+        <a href="servicesdata">Update Services section</a>
+        <a href="elementsdata">Update Elements section</a>
+        <a href="blogdata">Update Blog section</a>
+        <a href="contactdata?id={{x.id}}">Messages</a>
+        <a href="emplogout">Logout</a>
+    </div>
+    <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</span>
+    <font>PROFILE</font>
+    <div class="main">
+        <hr>
+        <table>
+            <tr>
+                <td>Name:-</td>
+                <td>{{x.empname}}</td>
+            </tr>
+            <tr>
+                <td>Mother's name:-</td>
+                <td>{{x.empMname}}</td>
+            </tr>
+            <tr>
+                <td>Contact no:-</td>
+                <td>{{x.empmobile}}</td>
+            </tr>
+            <tr>
+                <td>City:-</td>
+                <td>{{x.empcity}}</td>
+            </tr>
+            <tr>
+                <td>State:-</td>
+                <td>{{x.empstate}}</td>
+            </tr>
+            <tr>
+                <td>Pin-code:-</td>
+                <td>{{x.emppincode}}</td>
+            </tr>
+            <tr>
+                <td>Email:-</td>
+                <td>{{x.empemail}}</td>
+            </tr>
+        </table>
+        {% endfor %}
+    </div>
+    <script src="{% static 'js/emppro.js' %}"></script>
+</body>
+
+</html>

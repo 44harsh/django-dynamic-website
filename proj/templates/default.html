@@ -1,0 +1,141 @@
+{% load static %} {% block header %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- bootstrap CSS CDN link -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css">
+    <!-- external CSS file link -->
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <!-- font awesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+    {% for x in record %}
+    <!-----------------------------------Social bar ------------------------------------->
+    <div class="sticky-container">
+        <ul class="sticky">
+            <li>
+                <img src="{% static 'img/facebook.png' %}">
+                <p><a href="https://www.facebook.com/facebook/" target="_blank">Like Us on<br>Facebook</a></p>
+            </li>
+            <li>
+                <img src="{% static 'img/twitter.png' %}">
+                <p><a href="https://twitter.com/i/flow/login" target="_blank">Follow Us on<br>Twitter</a></p>
+            </li>
+            <li>
+                <img src="{% static 'img/google.svg' %}">
+                <p><a href="https://support.google.com/answer/2451065?hl=en" target="_blank">Follow Us on<br>Google+</a></p>
+            </li>
+            <li>
+                <img src="{% static 'img/linkedin.png' %}">
+                <p><a href="https://www.linkedin.com/home" target="_blank">Follow Us on<br>LinkedIn</a></p>
+            </li>
+            <li>
+                <img src="{% static 'img/youtube.png' %}">
+                <p><a href="https://www.youtube.com/" target="_blank">Subscribe on<br>YouYube</a></p>
+            </li>
+            <li>
+                <img src="{% static 'img/pinterest.png' %}">
+                <p><a href="https://in.pinterest.com/" target="_blank">Follow Us on<br>Pinterest</a></p>
+            </li>
+        </ul>
+    </div>
+    <!--------------------------------- NAVBAR ------------------------------------------------------>
+    <div class="infomabar">
+        <label class="infobar"><i class="fa fa-home" aria-hidden="true"></i><h6 style="display: inline;">{{x.city}}</h6> <i class="fa fa-phone" aria-hidden="true"></i><h6 style="display: inline;">{{x.Mnumber}}</h6> <i class="fa fa-envelope" aria-hidden="true"></i><h6 style="display: inline;">{{x.email}}</h6>
+            <ul>
+                <li><a href="https://www.facebook.com/facebook/"><i class="fa fa-facebook-f"></i></a></li>
+                <li><a href="https://twitter.com/i/flow/login"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                <li><a href="https://www.instagram.com/"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+                <li><a href="https://support.google.com/answer/2451065?hl=en"><i class="fa fa-google-plus" aria-hidden="true"></i></a></li>
+               </ul> 
+        </label>
+    </div>
+    <nav class="navbar navbar-expand-lg bg-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="/home">{{x.Cname}}</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+            <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="/home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/about">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/services">Services</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/elements">Elements</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/blog">Blog</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/contact">Contact</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/contact"><input type="submit" value="Get in Touch"></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    {% endfor %} {% endblock %} {% block container %} {% endblock %} {% block footer %}
+    <!-------------------------------------- footer ----------------------------------------------->
+    {% for x in record %}
+    <footer>
+        <div class="d-flex justify-content-around mb-3">
+            <div class="p-2 foot foote1">
+                <p class="foothead">{{x.Cname}}</p>{% endfor %} {% for y in defrec %}
+                <p>{{y.Cdesc}}</p>
+                <p><i class="fa fa-facebook-square" aria-hidden="true"></i><i class="fa fa-pinterest" aria-hidden="true"></i><i class="fa fa-twitter" aria-hidden="true"></i></p>
+            </div>
+            <div class="p-2 foot foote1">
+                <p class="foothead">USEFULL LINK</p>
+                <p>
+                    <ul>
+                        <li><a href="{{y.Ulink1}}">{{y.Ulinkhead1}}</a></li>
+                        <li><a href="{{y.Ulink2}}">{{y.Ulinkhead2}}</a></li>
+                        <li><a href="{{y.Ulink3}}">{{y.Ulinkhead3}}</a></li>
+                        <li><a href="{{y.Ulink4}}">{{y.Ulinkhead4}}</a></li>
+                        <li><a href="{{y.Ulink5}}">{{y.Ulinkhead5}}</a></li>
+                    </ul>
+                </p>
+            </div>
+            {% endfor %} {% for x in record %}
+            <div class="p-2 foot foote1">
+                <p class="foothead">Address US</p>
+                <p><i class="fa fa-map-marker" aria-hidden="true"></i>{{x.city}}</p>
+                <p><i class="fa fa-phone" aria-hidden="true"></i>{{x.Mnumber}}</p>
+                <p><i class="fa fa-envelope" aria-hidden="true"></i>{{x.email}}</p>
+                <p><i class="fa fa-clock-o" aria-hidden="true"></i>Opening Hours: 9:00-6:00</p>
+            </div>
+        </div>
+        <div class="d-flex mb-3 justify-content-around foot2">
+            <div class="p-2">copyright<i class="fa fa-copyright" aria-hidden="true">&nbsp all right are reserved</i></div>
+            <div class="p-2"><a href="/services">Service</a><a href="/contact">Contact</a><a href="/about">About</a><a href="/registration">Registration</a><a href="/emplog">login</a></div>
+        </div>
+    </footer>
+    <!----------------------------button to top  -------------------------------------------------------->
+    <button onclick="topFunction()" id="myBtn" title="Go to top">
+        <i class='fa fa-arrow-up'></i></button>
+    <!----------------------------- JavaScript----------------------------------------->
+    <!-- bootstrap JavaScript CDN link -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- external JavaScript link -->
+    <script src="{% static 'js/jav.js' %}"></script>
+    {% endfor %}
+</body>
+
+</html>
+{% endblock %}

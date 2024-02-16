@@ -1,0 +1,118 @@
+{% extends 'default.html' %} {% block container %} {% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    {% for x in blorec %}
+    <div class="blog" id="blo">
+        <p class="head">{{x.heading}}</p>
+        <div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <div class="card-group">
+                        <div class="card">
+                            {% if x.Bimage1 %}
+                            <img src="{{x.Bimage1.url}}" alt="image in here" class="productsize">
+                            {% else %}
+                            <img src="{% static 'img/about.jpg' %}" alt="" class="productsize">
+                            {% endif %}
+                            <div class="card-body">
+                                <h5 class="card-title">{{x.subhead1}}</h5>
+                                <p class="card-text">{{x.desc1}}</p>
+                                <a href="#" class="btn btn-primary">Go somewhere</a>
+                            </div>
+                        </div>
+                        <div class="card">
+                            {% if x.Bimage2 %}
+                            <img src="{{x.Bimage2.url}}" alt="image in here" class="productsize">
+                            {% else %}
+                            <img src="{% static 'img/about.jpg' %}" alt="" class="productsize">
+                            {% endif %}
+                            <div class="card-body">
+                                <h5 class="card-title">{{x.subhead2}}</h5>
+                                <p class="card-text">{{x.desc2}}</p>
+                                <a href="#" class="btn btn-primary">Go somewhere</a>
+                            </div>
+                        </div>
+                        <div class="card">
+                            {% if x.Bimage3 %}
+                            <img src="{{x.Bimage3.url}}" alt="image in here" class="productsize">
+                            {% else %}
+                            <img src="{% static 'img/about.jpg' %}" alt="" class="productsize">
+                            {% endif %}
+                            <div class="card-body">
+                                <h5 class="card-title">{{x.subhead3}}</h5>
+                                <p class="card-text">{{x.desc3}}</p>
+                                <a href="#" class="btn btn-primary">Go somewhere</a>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+                <div class="carousel-item">
+                    <div class="card-group">
+                        <div class="card">
+                            {% if x.Bimage4 %}
+                            <img src="{{x.Bimage4.url}}" alt="image in here" class="productsize">
+                            {% else %}
+                            <img src="{% static 'img/about.jpg' %}" alt="" class="productsize">
+                            {% endif %}
+                            <div class="card-body">
+                                <h5 class="card-title">{{x.subhead4}}</h5>
+                                <p class="card-text">{{x.desc4}}</p>
+                                <a href="#" class="btn btn-primary">Go somewhere</a>
+                            </div>
+                        </div>
+                        <div class="card">
+                            {% if x.Bimage5 %}
+                            <img src="{{x.Bimage5.url}}" alt="image in here" class="productsize">
+                            {% else %}
+                            <img src="{% static 'img/about.jpg' %}" alt="" class="productsize">
+                            {% endif %}
+                            <div class="card-body">
+                                <h5 class="card-title">{{x.subhead5}}</h5>
+                                <p class="card-text">{{x.desc5}}</p>
+                                <a href="#" class="btn btn-primary">Go somewhere</a>
+                            </div>
+                        </div>
+                        <div class="card">
+                            {% if x.Bimage6 %}
+                            <img src="{{x.Bimage6.url}}" alt="image in here" class="productsize">
+                            {% else %}
+                            <img src="{% static 'img/about.jpg' %}" alt="" class="productsize">
+                            {% endif %}
+                            <div class="card-body">
+                                <h5 class="card-title">{{x.subhead6}}</h5>
+                                <p class="card-text">{{x.desc6}}</p>
+                                <a href="#" class="btn btn-primary">Go somewhere</a>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+              </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+              </button>
+
+        </div>
+    </div>
+    {% endfor %}
+</body>
+
+</html>
+{% endblock %}

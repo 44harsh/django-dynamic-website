@@ -1,0 +1,67 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'css/data.css' %}">
+</head>
+
+<body>
+    <form action="defdata" method="post">
+        {% csrf_token %}
+        <h1 class="main">Update Footer</h1>
+        {% for x in defrec %}
+        <table>
+            <tr>
+                <td>company description</td>
+                <td><input type="text" name="Cdesc" id="" value="{{x.Cdesc}}"></td>
+                <td>use full link 1 heading</td>
+                <td><input type="text" name="Ulinkhead1" id="" value="{{x.Ulinkhead1}}"></td>
+            </tr>
+            <tr>
+                <td>use full link 2 heading</td>
+                <td><input type="text" name="Ulinkhead2" id="" value="{{x.Ulinkhead2}}"></td>
+                <td>use full link 3 heading</td>
+                <td><input type="text" name="Ulinkhead3" id="" value="{{x.Ulinkhead3}}"></td>
+            </tr>
+            <tr>
+                <td>use full link 4 heading</td>
+                <td><input type="text" name="Ulinkhead4" id="" value="{{x.Ulinkhead4}}"></td>
+                <td>use full link 5 heading</td>
+                <td><input type="text" name="Ulinkhead5" id="" value="{{x.Ulinkhead5}}"></td>
+            </tr>
+            <tr>
+                <td>use full link 1</td> 
+                <td><input type="text" name="Ulink1" id="" value="{{x.Ulink1}}"></td>
+                <td>use full link 2</td>
+                <td><input type="text" name="Ulink2" id="" value="{{x.Ulink2}}"></td>
+            </tr>
+            <tr>
+                <td>use full link 3</td>
+                <td><input type="text" name="Ulink3" id="" value="{{x.Ulink3}}"></td>
+                <td>use full link 4</td>
+                <td><input type="text" name="Ulink4" id="" value="{{x.Ulink4}}"></td>
+            </tr>
+            <tr>
+                <td>use full link 5</td>
+                <td><input type="text" name="Ulink5" id="" value="{{x.Ulink5}}"></td>
+            </tr>
+            <tr>
+                <td>{{msg}}</td>
+                <td><input type="submit" value="submit"></td>
+            </tr>
+            {% for y in emprec %}
+            <a href="emppro?lid={{y.id}}">Back</a>
+            {% endfor %} 
+        </table>
+        {% endfor %}
+    </form>
+    
+     
+</body>
+
+</html>

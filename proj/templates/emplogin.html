@@ -1,0 +1,37 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Bebas+Neue&family=Caveat&family=Lobster&family=Oswald:wght@200;600&family=PT+Sans&family=Pacifico&family=Stint+Ultra+Condensed&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/emplogcss.css' %}">
+</head>
+
+<body>
+    <div class="container">
+        <div class="split left">
+        </div>
+
+        <div class="split right">
+            <p class="head">Login</p>
+            <div class="centered">
+                <form action="emplog" method="post">
+                    {% csrf_token %}
+                    <p>User Id</p><input type="email" placeholder="enter user id" name="email" required>
+                    <p>Password</p><input type="password" placeholder="enter password in here" name="pass" required>
+                    <input type="submit" value="Login">
+                </form>
+                <b class="text-danger">{{msgg}}</b>
+                <br>
+                <a href="/registration">create account</a><br><br>
+                <a href="home">BACK</a>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

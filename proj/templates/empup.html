@@ -1,0 +1,61 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'css/update.css' %}">
+</head>
+
+<body>
+    {% for x in emprec %}
+    <form action="empup" method="post">
+        {% csrf_token %}
+        <input type="hidden" value="{{x.id}}" name="id">
+        <table>
+            <h1 class="main">Update My Details</h1>
+            <tr>
+                <td>NAME:-</td>
+                <td><input type="text" value="{{x.empname}}" name="empname"></td>
+            </tr>
+            <tr>
+                <td>Mother's name:-</td>
+                <td><input type="text" value="{{x.empMname}}" name="empMname"></td>
+            </tr>
+            <tr>
+                <td>Contact no:-</td>
+                <td><input type="text" value="{{x.empmobile}}" name="empmobile"></td>
+            </tr>
+            <tr>
+                <td>City:-</td>
+                <td><input type="text" value="{{x.empcity}}" name="empcity"></td>
+            </tr>
+            <tr>
+                <td>State:-</td>
+                <td><input type="text" value="{{x.empstate}}" name="empstate"></td>
+            </tr>
+            <tr>
+                <td>Pincode:-</td>
+                <td><input type="text" value="{{x.emppincode}}" name="emppincode"></td>
+            </tr>
+            <tr>
+                <td>Email:-</td>
+                <td><input type="text" value="{{x.empemail}}" name="empemail"></td>
+            </tr>
+            <tr>
+                <td>Password:-</td>
+                <td><input type="text" value="{{x.emppassword}}" name="emppassword"></td>
+            </tr>
+            <tr>
+                <td>{{msg}}</td>
+                <td><input type="submit" value="UPDATE"></td>
+            </tr>
+        </table>
+    </form>
+    <a href="emppro?lid={{x.id}}">Back</a> {% endfor %}
+</body>
+
+</html>

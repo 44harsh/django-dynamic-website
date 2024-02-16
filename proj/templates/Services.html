@@ -1,0 +1,189 @@
+{% extends 'default.html' %} {% block container %} {% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    {% for x in serrec %}
+    <p class="head" id="serve">{{x.heading}}</p>
+    <div class="service">
+        <h5 style="text-align:center; padding: 20px; color: white;">{{x.subheading}}</h5>
+        <div class="container text-center">
+            <div class="row oldservice">
+                <div class="col-sm">
+                    <div class="sercon">
+                        {% if x.Simage %}
+            <img src="{{x.Simage.url}}" alt="image in here" class="productsize">
+            {% else %}
+            <img src="{% static 'img/service-hov' %}" alt="" class="productsize">
+            {% endif %}
+                        <div class="image__overlay">
+                            <div class="image__title">SERVICE 1</div>
+                            <p class="image__description">
+                                {{x.ser1}}
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm">
+                    <div class="sercon">
+                        {% if x.Simage %}
+            <img src="{{x.Simage.url}}" alt="image in here" class="productsize">
+            {% else %}
+            <img src="{% static 'img/service-hov' %}" alt="" class="productsize">
+            {% endif %}
+                        <div class="image__overlay">
+                            <div class="image__title">SERVICE 2
+                            </div>
+                            <p class="image__description">
+                                {{x.ser2}}
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm">
+                    <div class="sercon">
+                        {% if x.Simage %}
+            <img src="{{x.Simage.url}}" alt="image in here" class="productsize">
+            {% else %}
+            <img src="{% static 'img/service-hov' %}" alt="" class="productsize">
+            {% endif %}
+                        <div class="image__overlay">
+                            <div class="image__title">SERVICE 3</div>
+                            <p class="image__description">
+                                {{x.ser3}}
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container container2 text-center">
+            <div class="row oldservice">
+                <div class="col">
+                    <div class="sercon2" id="seco">
+                        {% if x.Simage %}
+            <img src="{{x.Simage.url}}" alt="image in here" class="productsize">
+            {% else %}
+            <img src="{% static 'img/service-hov' %}" alt="" class="productsize">
+            {% endif %}
+                        <div class="image__overlay">
+                            <div class="image__title">SERVICE 4</div>
+                            <p class="image__description">
+                                {{x.ser4}}
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="sercon2">
+                        {% if x.Simage %}
+            <img src="{{x.Simage.url}}" alt="image in here" class="productsize">
+            {% else %}
+            <img src="{% static 'img/service-hov' %}" alt="" class="productsize">
+            {% endif %}
+                        <div class="image__overlay">
+                            <div class="image__title">SERVICE 5</div>
+                            <p class="image__description">
+                                {{x.ser5}}
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- service that display when screen max-width is 952 -->
+        <div class="d-flex flex-column mb-3">
+            <div class="p-2 newservice">
+                <div class="sercon">
+                    <p class="sevicehead2">service</p>
+                    {% if x.Simage %}
+            <img src="{{x.Simage.url}}" alt="image in here" class="productsize">
+            {% else %}
+            <img src="{% static 'img/service-hov' %}" alt="" class="productsize">
+            {% endif %}
+                    <div class="image__overlay">
+                        <div class="image__title">SERVICE 1</div>
+                        <p class="image__description">
+                            {{x.ser1}}
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="p-2 newservice">
+                <div class="sercon">
+                    <p class="sevicehead2">service</p>
+                    {% if x.Simage %}
+            <img src="{{x.Simage.url}}" alt="image in here" class="productsize">
+            {% else %}
+            <img src="{% static 'img/service-hov' %}" alt="" class="productsize">
+            {% endif %}
+                    <div class="image__overlay">
+                        <div class="image__title">SERVICE 2</div>
+                        <p class="image__description">
+                            {{x.ser2}}
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="p-2 newservice">
+                <div class="sercon">
+                    <p class="sevicehead2">service</p>
+                    {% if x.Simage %}
+            <img src="{{x.Simage.url}}" alt="image in here" class="productsize">
+            {% else %}
+            <img src="{% static 'img/service-hov' %}" alt="" class="productsize">
+            {% endif %}
+                    <div class="image__overlay">
+                        <div class="image__title">SERVICE 3</div>
+                        <p class="image__description">
+                            {{x.ser3}}
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="p-2 newservice">
+                <div class="sercon">
+                    <p class="sevicehead2">service</p>
+                    {% if x.Simage %}
+            <img src="{{x.Simage.url}}" alt="image in here" class="productsize">
+            {% else %}
+            <img src="{% static 'img/service-hov' %}" alt="" class="productsize">
+            {% endif %}
+                    <div class="image__overlay">
+                        <div class="image__title">SERVICE 4</div>
+                        <p class="image__description">
+                            {{x.ser4}}
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="p-2 newservice">
+                <div class="sercon">
+                    <p class="sevicehead2">service</p>
+                    {% if x.Simage %}
+            <img src="{{x.Simage.url}}" alt="image in here" class="productsize">
+            {% else %}
+            <img src="{% static 'img/service-hov' %}" alt="" class="productsize">
+            {% endif %}
+                    <div class="image__overlay">
+                        <div class="image__title">SERVICE 5</div>
+                        <p class="image__description">
+                            {{x.ser5}}
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</body>
+
+</html>
+{% endblock %}

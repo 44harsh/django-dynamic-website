@@ -1,0 +1,55 @@
+.container {
+    top: 0;
+    width: 100%;
+    height: 100%;
+}
+
+nav {
+    width: 100%;
+    background-color: rgb(95, 93, 93);
+}
+
+.head {
+    font-size: 40px;
+    font-family: 'Anton', sans-serif;
+    text-decoration: underline;
+    color: white;
+    margin-left: 7%;
+}
+
+table {
+    margin: auto;
+    width: 80%;
+    height: 500px;
+}
+
+table tr td {
+    font-weight: bold;
+    font-size: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.input {
+    width: 95%;
+    border-radius: 5px;
+    border: 0;
+    opacity: 70%;
+    height: 80%;
+    background-color: rgb(216, 211, 211);
+}
+
+table tr th input[type="submit"] {
+    padding: 10px;
+    border-radius: 10px;
+    color: white;
+    background-color: rgb(12, 116, 116);
+    font-weight: bold;
+}
+
+table tr th input[type="submit"]:hover {
+    cursor: pointer;
+}
+
+.message {
+    display: none;
+}

@@ -1,0 +1,57 @@
+{% extends 'default.html' %} {% block container %} {% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HOME</title>
+</head>
+
+<body>
+    {% for x in homerec %}
+    <div class="slider" id="hom">
+        <svg class="wave" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="white" fill-opacity="1" d="M0,224L80,208C160,192,320,160,480,176C640,192,800,256,960,272C1120,288,1280,256,1360,240L1440,224L1440,320L1360,320C1280,320,1120,320,960,320C800,320,640,320,480,320C320,320,160,320,80,320L0,320Z"></path></svg>
+
+        <div class="box" id="box1">
+            <p>{{x.box1}}</p>
+        </div>
+        <div class="box" id="box2">
+            <p>
+                {{x.box2}}
+            </p>
+        </div>
+        <div class="box" id="box3">
+            <p>{{x.box3}}</p>
+        </div>
+        <div class="box" id="box4">
+            <p>
+                {{x.box4}}
+            </p>
+        </div>
+    </div>
+    <!-- boxes that display when screen max-width is 952 -->
+    <div class="block1">
+        <div class="boxe">
+            <p>{{x.box1}}</p>
+        </div>
+        <div class="boxe">
+            <p>
+                {{x.box2}}
+            </p>
+        </div>
+        <div class="boxe">
+            <p>{{x.box3}}</p>
+        </div>
+        <div class="boxe">
+            <p>
+                {{x.box5}}
+            </p>
+        </div>
+    </div>
+    {% endfor %}
+</body>
+
+</html>
+{% endblock %}

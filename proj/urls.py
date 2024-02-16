@@ -1,0 +1,35 @@
+from django.contrib import admin
+from django.urls import path
+from.import views
+
+urlpatterns=[
+   path('home',views.home),
+   path('defau',views.defau),
+   path('about',views.about),
+   path('services',views.services),
+   path('elements',views.elements),
+   path('blog',views.blog),
+   path('contact',views.contact),
+   path('log',views.log),
+   path('emplog',views.emplog),
+   path('empup',views.empup),
+   path('empdetails',views.empdetails),
+   path('registration',views.registration),
+   path('regis',views.regis),
+   path('comname',views.comname),
+   path('comup',views.comup),
+   path('pro',views.pro),
+   path('managerup',views.managerup),
+   path('logout',views.logout),
+   path('emppro',views.emppro),
+   path('emplogout',views.emplogout),
+   path('defdata',views.defdata),
+   path('homedata',views.homedata),
+   path('aboutdata',views.aboutdata),
+   path('servicesdata',views.servicesdata),
+   path('elementsdata',views.elementsdata),
+   path('blogdata',views.blogdata),
+   path('acceptedemp',views.acceptedemp),
+   path('removeemp',views.removeemp),
+   path('contactdata',views.contactdata),
+]

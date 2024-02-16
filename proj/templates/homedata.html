@@ -1,0 +1,46 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'css/data.css' %}">
+</head>
+
+<body>
+    {% for x in homerec %}
+    <form action="homedata" method="post">
+        {% csrf_token %}
+        <h1 class="main">Update Home Section</h1>
+        <table>
+            <tr>
+                <td>data of box first</td>
+                <td><input type="text" name="box1" id="" value="{{x.box1}}"></td>
+            </tr>
+            <tr>
+                <td>data of box second</td>
+                <td><input type="text" name="box2" id="" value="{{x.box2}}"></td>
+            </tr>
+            <tr>
+                <td>data of box third</td>
+                <td><input type="text" name="box3" id="" value="{{x.box3}}"></td>
+            </tr>
+            <tr>
+                <td>data of box fourth</td>
+                <td><input type="text" name="box4" id="" value="{{x.box4}}"></td>
+            </tr>
+            <tr>
+                <td>{{msg}}</td>
+                <td><input type="submit" value="submit"></td>
+            </tr>
+            {% for x in emprec %}
+    <a href="emppro?lid={{x.id}}">Back</a> {% endfor %}
+        </table>
+    </form>
+    {% endfor %} 
+</body>
+
+</html>

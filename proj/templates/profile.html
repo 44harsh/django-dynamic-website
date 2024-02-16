@@ -1,0 +1,62 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="widtd=device-widtd, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'css/profilecss.css' %}">
+</head>
+
+<body>
+    {% for x in rec %}
+    <div id="mySidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <a href="managerup?id={{x.id}}">Update my details</a>
+        <a href="comup?id={{x.id}}">Update company details</a>
+        <a href="empdetails?id={{x.id}}">Get employee details</a>
+        <a href="acceptedemp?id={{x.id}}">Get Accepted employee details</a>
+        <a href="logout">Logout</a>
+    </div>
+    <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</span>
+    <font>PROFILE</font>
+    <div class="main">
+        <hr>
+        <table>
+            <tr>
+                <td>Name:-</td>
+                <td>{{x.name}}</td>
+            </tr>
+            <tr>
+                <td>Mother's name:-</td>
+                <td>{{x.Mname}}</td>
+            </tr>
+            <tr>
+                <td>Contact no:-</td>
+                <td>{{x.mobile}}</td>
+            </tr>
+            <tr>
+                <td>City:-</td>
+                <td>{{x.city}}</td>
+            </tr>
+            <tr>
+                <td>State:-</td>
+                <td>{{x.state}}</td>
+            </tr>
+            <tr>
+                <td>Pin-code:-</td>
+                <td>{{x.pincode}}</td>
+            </tr>
+            <tr>
+                <td>Email:-</td>
+                <td>{{x.email}}</td>
+            </tr>
+        </table>
+        {% endfor %}
+    </div>
+    <script src="{% static 'js/emppro.js' %}"></script>
+</body>
+
+</html>

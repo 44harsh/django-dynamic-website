@@ -1,0 +1,38 @@
+{% extends 'default.html' %} {% block container %} {% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="contact" id="cont">
+        <div class="d-flex mb-3">
+            <div class="p-2 cont1">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3665.795981918907!2d77.45960182653926!3d23.25051006512588!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x397c430a9ca2948b%3A0xaa66b8d00e4575c0!2sTechDigi%20Software%20Pvt.%20Ltd.!5e0!3m2!1sen!2sin!4v1662383383556!5m2!1sen!2sin"
+                    width="500" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+            <div class="p-2 cont1">
+                <p class="head">Get in Touch</p>
+                <form action="contact" method="post">
+                    {% csrf_token %}
+                    <div class="d-flex flex-column mb-3 contactarea">
+                        <div class="p-2"><input type="text" placeholder="Enter Name" name="name" required></div>
+                        <div class="p-2"><input type="text" placeholder="Enter Phone" name="phone" required></div>
+                        <div class="p-2"><input type="email" placeholder="Enter email" name="email" required></div>
+                        <div class="p-2"><input type="text" placeholder="Enter Subject" name="subject" required></div>
+                        <div class="p-2"><textarea name="message" id="" cols="40" rows="6" required placeholder="  Enter your text here"></textarea><br></div>
+                        <input type="submit" value="Send Message">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
+{% endblock %}

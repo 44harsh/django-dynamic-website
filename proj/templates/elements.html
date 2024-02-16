@@ -1,0 +1,101 @@
+{% extends 'default.html' %} {% block container %} {% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    {% for x in elerec %}
+    <div class="why" id="wh">
+        <p class="head">{{x.mainHead}}</p>
+        <div class="d-flex  justify-content-around mb-3">
+            <div class="p-2">
+                <div class="card shadow-lg p-3 mb-5 bg-body">
+                    <div class="card-body">
+                        <h4 class="card-title">{{x.box1head}}</h4>
+                        <p class="card-text">{{x.box1para}}</p>
+                        <a href="#" class="card-link">Details</a>
+                    </div>
+                </div>
+            </div>
+            <div class="p-2">
+                <div class="card shadow-lg p-3 mb-5 bg-body">
+                    <div class="card-body">
+                        <h4 class="card-title">{{x.box2head}}</h4>
+                        <p class="card-text">{{x.box2para}}</p>
+                        <a href="#" class="card-link">Details</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="d-flex justify-content-around mb-3">
+            <div class="p-2">
+                <div class="card shadow-lg p-3 mb-5 bg-body">
+                    <div class="card-body">
+                        <h4 class="card-title">{{x.box3head}}</h4>
+                        <p class="card-text">{{x.box3para}}</p>
+                        <a href="#" class="card-link">Details</a>
+                    </div>
+                </div>
+            </div>
+            <div class="p-2">
+                <div class="card shadow-lg p-3 mb-5 bg-body">
+                    <div class="card-body">
+                        <h4 class="card-title">{{x.box4head}}</h4>
+                        <p class="card-text">{{x.box4para}}</p>
+                        <a href="#" class="card-link">Details</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="progres">
+        <div class="d-flex mb-3">
+            <div class="p-2 prog1">
+            {% if x.Eimage %}
+            <img src="{{x.Eimage.url}}" alt="image in here" class="productsize">
+            {% else %}
+            <img src="{% static 'img/empl.jpg' %}" alt="" class="productsize">
+            {% endif %}
+            </div>
+            <div class="p-2 prog1">
+                <p class="head">{{x.mainHead2}}</p>
+                <ul>
+                    <li>{{x.prohead1}}</li>
+                    <li>
+                        <div class="progress">
+                            <div class="progress-bar w-75" role="progressbar" aria-label="Basic example" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
+                    </li>
+                    <li>{{x.prohead2}}</li>
+                    <li>
+                        <div class="progress">
+                            <div class="progress-bar w-75" role="progressbar" aria-label="Basic example" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
+                    </li>
+                    <li>{{x.prohead3}}</li>
+                    <li>
+                        <div class="progress">
+                            <div class="progress-bar w-75" role="progressbar" aria-label="Basic example" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
+                    </li>
+                    <li>{{x.prohead4}}</li>
+                    <li>
+                        <div class="progress">
+                            <div class="progress-bar w-75" role="progressbar" aria-label="Basic example" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</body>
+
+</html>
+{% endblock %}

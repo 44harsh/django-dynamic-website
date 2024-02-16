@@ -1,0 +1,50 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'css/empdel.css' %}">
+</head>
+
+<body>
+    <div class="container">
+        {% for i in rec %}
+        <a href="pro?id={{i.id}}">Back</a> {% endfor %}
+        <table>
+            <tr>
+                <td></td>
+                <td>Name:-</td>
+                <td>Mother's name:-</td>
+                <td>Mobile no.:-</td>
+                <td>City:-</td>
+                <td>State:-</td>
+                <td>Pincode:-</td>
+                <td>Email:-</td>
+            </tr>
+            {% for x in empdelrec %}
+            <tr>
+                <form action="empdetails" method="post">
+                    {% csrf_token %}
+                    <td><input type="hidden" name="id" value="{{x.id}}" id="" readonly></td>
+                    <td><input type="text" name="empname" value="{{x.empname}}" id="" readonly></td>
+                    <td><input type="text" name="empMname" value="{{x.empMname}}" id="" readonly></td>
+                    <td><input type="text" name="empmobile" value="{{x.empmobile}}" id="" readonly></td>
+                    <td><input type="text" name="empcity" value="{{x.empcity}}" id="" readonly></td>
+                    <td><input type="text" name="empstate" value="{{x.empstate}}" id="" readonly></td>
+                    <td><input type="text" name="emppincode" value="{{x.emppincode}}" id="" readonly></td>
+                    <td><input type="text" name="empemail" value="{{x.empemail}}" id="" readonly></td>
+                    <td><input type="hidden" name="emppassword" value="{{x.emppassword}}" id="" readonly></td>
+                    <td><input type="submit" value="Accept" name="submit"></td>
+                </form>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+    <script src="{% static 'js/backbutton.js' %}"></script>
+</body>
+
+</html>

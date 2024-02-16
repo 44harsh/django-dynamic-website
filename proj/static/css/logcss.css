@@ -1,0 +1,85 @@
+.split {
+    top: 0;
+    width: 50%;
+    height: 70%;
+    position: fixed;
+    z-index: 1;
+    overflow-x: hidden;
+    padding-top: 20px;
+    margin: 5%;
+    font-family: Arial, Helvetica, sans-serif;
+    box-shadow: 8px 8px 12px rgb(136, 134, 134);
+}
+
+.head {
+    text-align: center;
+    font-size: 40px;
+    font-family: 'Anton', sans-serif;
+    text-decoration: underline;
+}
+
+
+/* Control the left side */
+
+.left {
+    left: 0;
+    background-image: url('/static/img/emp2.jpg');
+    background-size: cover;
+}
+
+
+/* Control the right side */
+
+.right {
+    right: 0;
+    background-image: linear-gradient(to right, rgb(18, 148, 126), white);
+}
+
+
+/* If you want the content centered horizontally and vertically */
+
+.centered {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.centered input[type="email"],
+.centered input[type="password"] {
+    border-radius: 20px;
+    text-align: center;
+    border: 0;
+    display: block;
+    width: 100%;
+    padding: 5px;
+}
+
+.centered input[type="submit"] {
+    border-radius: 20px;
+    text-align: center;
+    width: 100%;
+    padding: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+    display: block;
+    font-weight: bold;
+    border: 0;
+}
+
+.centered input[type="submit"]:hover {
+    background-color: gray;
+    color: white;
+}
+
+.centered p {
+    font-weight: bold;
+    font-size: 20px;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+}
